@@ -1,0 +1,19 @@
+@use "../../styles/helpers" as *;
+
+.toDoList {
+  background-color: #fff;
+  min-width: rem(400);
+  min-height: rem(400);
+  color: red;
+  border: 1px solid #D9D9D9;
+  border-radius: rem(20);
+  box-shadow: rem(2) rem(2) rem(15) rgba(0, 0, 0, 0.2);
+}
+
+.toDoListWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
