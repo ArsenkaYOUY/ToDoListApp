@@ -1,0 +1,11 @@
+@use "../../../styles/helpers" as *;
+
+.header {
+  font-size: rem(30);
+  font-weight: 600;
+  letter-spacing: rem(-0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //padding: rem(24) 0;
+}

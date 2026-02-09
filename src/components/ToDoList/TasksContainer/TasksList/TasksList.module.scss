@@ -1,0 +1,116 @@
+@use "../../../../styles/helpers" as *;
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(10);
+}
+
+.taskInput {
+  width: 100%;
+  border: 1px solid #D9D9D9;
+  border-radius: rem(8);
+  font-size: 1rem;
+  font-weight: 200;
+  padding: rem(7) rem(48) rem(7) rem(10);
+  height: rem(40);
+  transition-duration: 0.2s;
+  &:hover {
+    border-color: #646cff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #646cff;
+  }
+   
+  &Checked {
+    //text-decoration: line-through;
+    color: #888; /* Серый цвет */
+    opacity: 0.7; /* Полупрозрачность */
+  }
+  
+}
+
+.listElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  position: relative;
+}
+
+.taskDeleteButton {
+  position: absolute;
+  right: 0;
+  width: rem(20);
+  height: rem(20);
+  padding: rem(20);
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: rem(20);
+    height: rem(2);
+    background-color: #000;
+    transition: all 0.2s;
+
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  @include hover {
+    &::before,
+    &::after {
+      background-color: #646cff;
+    }
+  }
+}
+
+.checkbox {
+
+  width: rem(20);
+  height: rem(20);
+
+  &Input {
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+    appearance: none;
+    width: rem(20);
+    height: rem(20);
+    border-radius: rem(4);
+    background-color: #fff;
+    border: rem(1) solid black;
+    transition-duration: 0.2s;
+
+    &:checked {
+      background-color: #000;
+    }
+
+    &:not(:checked) {
+      &::after {
+        @include hide;
+      }
+    }
+
+    &::after {
+      content: '✔';
+      translate: -50% 0;
+      position: absolute;
+      left: 50%;
+      color: #fff;
+      transition-duration: 0.2s;
+    }
+  }
+
+}

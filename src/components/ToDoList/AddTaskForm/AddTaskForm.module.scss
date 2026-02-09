@@ -1,0 +1,47 @@
+@use "../../../styles/helpers" as *;
+
+.addForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #D9D9D9;
+  border-radius: rem(8);
+  font-size: 1rem;
+  font-weight: 200;
+  padding: rem(7) rem(10);
+  height: rem(40);
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: #646cff;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #646cff;
+  }
+}
+
+.button {
+  background-color: #2C2C2C;
+  color: #F5F5F5;
+  border-radius: rem(8);
+  height: rem(40);
+  padding: rem(12);
+  border: none;
+  transition: all 0.15s ease;
+
+  &:active {
+    background-color: #2C2C2C;
+  }
+
+  &:hover {
+    background-color: #646cff; // меняем цвет при наведении
+    transform: scale(1.03);
+  }
+}

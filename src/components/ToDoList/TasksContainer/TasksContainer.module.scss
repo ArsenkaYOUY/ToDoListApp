@@ -1,0 +1,7 @@
+@use "../../../styles/helpers" as *;
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(20);
+}
