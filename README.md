@@ -1,16 +1,27 @@
-# React + Vite
+# 📝 To-Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Учебный проект для погружения в React + Vite.** Современное приложение для управления задачами, созданное для освоения реактивных компонентов, контекста и модульной стилизации.
 
-Currently, two official plugins are available:
+## 🚀 Быстрый старт
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+git clone <репозиторий>
+npm install
+npm run dev
+```
 
-## React Compiler
+Откройте `http://localhost:5173`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Технологический стек
 
-## Expanding the ESLint configuration
+- **React 18 + Vite** — быстрая сборка и горячая перезагрузка
+- **SCSS Modules** — изолированные стили с препроцессором
+- **Context API** — чистое управление состоянием без лишних зависимостей
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎮 Возможности
+
+1. **Создание задач** — добавление новых дел одним нажатием
+2. **Отметка выполнения** — визуальное отображение прогресса
+3. **Живое редактирование** — мгновенное изменение прямо в списке
+4. **Умный поиск** — моментальная фильтрация по мере ввода
+5. **Управление списком** — удаление отдельных или всех задач
