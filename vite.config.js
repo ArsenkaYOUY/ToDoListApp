@@ -11,6 +11,7 @@ export default defineConfig({
       '@components': path.resolve('./src/components'),
       '@styles': path.resolve('./src/styles'),
       '@data': path.resolve('./src/data'),
+      '@helpers' : path.resolve('./src/styles/helpers')
     }
   }
 })

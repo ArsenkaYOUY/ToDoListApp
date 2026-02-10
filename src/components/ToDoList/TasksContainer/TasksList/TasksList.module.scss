@@ -1,8 +1,12 @@
-@use "../../../../styles/helpers" as *;
+//@use "../../../../styles/helpers" as *;
+@use "@helpers" as *;
 
 .tasksList {
   display: flex;
   flex-direction: column;
   row-gap: rem(10);
   position: relative;
+  height: rem(200);
+  overflow-y: auto;
+  padding-right: rem(10);
 }

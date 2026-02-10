@@ -6,7 +6,7 @@
   border-radius: rem(8);
   font-size: 1rem;
   font-weight: 200;
-  padding: rem(7) rem(48) rem(7) rem(10);
+  padding: rem(7) rem(65) rem(7) rem(10);
   height: rem(40);
   transition-duration: 0.2s;
   &:hover {
@@ -19,9 +19,8 @@
   }
 
   &Checked {
-    //text-decoration: line-through;
-    color: #888; /* Серый цвет */
-    opacity: 0.7; /* Полупрозрачность */
+    color: #888;
+    opacity: 0.7;
   }
 
 }
@@ -107,4 +106,17 @@
     }
   }
 
+}
+
+.editingButtons {
+  display: flex;
+  column-gap: rem(5);
+  position: absolute;
+  right: rem(10);
+}
+
+.editButton {
+  padding: rem(7);
+  background-color: transparent;
+  border: none;
 }

@@ -21,6 +21,8 @@ export default function Task({ task }) {
     function saveEdit(taskId) {
         if (editText.trim()) {
             onTaskChange({id : taskId, text: editText});
+        } else {
+            deleteTask(taskId);
         }
         setEditingId(null);
         setEditText('');
@@ -39,19 +41,24 @@ export default function Task({ task }) {
                 <input
                     type="text"
                     onChange={(e) => setEditText(e.target.value)}
+                    onBlur = {() => saveEdit(task.id) }
+                    onKeyDown = {(e) => {
+                        if (e.key === "Enter") saveEdit(task.id)
+                        }
+                    }
                     value={editText}
                     className={styles.taskInput}
                 />
                 <div className={styles.editingButtons}>
                     <button
-                        className={styles.button}
+                        className={styles.editButton}
                         onClick={() => saveEdit(task.id)}
                     >
                         ✓
                     </button>
                     <button
-                        className={styles.button}
-                        onClick={() => cancelEdit()}
+                        className={styles.editButton}
+                        onMouseDown={() => cancelEdit()}
                     >
                         ✕
                     </button>
