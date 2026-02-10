@@ -1,5 +1,5 @@
 import {useState} from "react";
-
+import {ToDoListContext} from "./ToDoListContext.jsx"
 import styles from './toDoList.module.scss'
 import Header from "@components/ToDoList/Header/Header.jsx";
 import AddTaskForm from "@components/ToDoList/AddTaskForm/AddTaskForm.jsx";
@@ -79,7 +79,7 @@ export default function ToDoList() {
         }
     }
 
-    function deleteAllTasks(tasks) {
+    function deleteAllTasks() {
         setTasks([]);
         setSearchTasks([]);
         setIsSearching(false);
@@ -96,21 +96,26 @@ export default function ToDoList() {
     }
 
     return(
-        <div className={styles.toDoListWrapper}>
-            <div className={styles.toDoList}>
-                <Header  />
-                <AddTaskForm onAddTask={onAddTask} />
-                <SearchTaskForm onSearchTask={onSearchTask} />
-                <TasksContainer
-                    tasks={getTasksToDisplay()}
-                    isSearching={isSearching}
-                    onTaskChange={onTaskChange}
-                    deleteAllFoundTasks={deleteAllFoundTasks}
-                    deleteAllTasks={deleteAllTasks}
-                    deleteTask={deleteTask}
-                    onToggleTask={onToggleTask}
-                />
+
+            <div className={styles.toDoListWrapper}>
+                <div className={styles.toDoList}>
+                    <Header  />
+                    <AddTaskForm onAddTask={onAddTask} />
+                    <SearchTaskForm onSearchTask={onSearchTask} />
+                    <ToDoListContext.Provider value={
+                        {
+                            setTasks,
+                            isSearching, setIsSearching,
+                            searchTasks, setSearchTasks,
+                            onToggleTask, getTasksToDisplay,
+                            onTaskChange, deleteTask,
+                            deleteAllTasks, deleteAllFoundTasks,
+                        }}
+                    >
+                         <TasksContainer />
+                    </ToDoListContext.Provider>
+                </div>
             </div>
-        </div>
+
     )
 }
