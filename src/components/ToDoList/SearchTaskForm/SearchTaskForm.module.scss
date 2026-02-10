@@ -1,4 +1,4 @@
-@use "../../../styles/helpers" as *;
+@use "@helpers" as *;
 
 .searchForm {
   display: flex;
@@ -26,34 +26,38 @@
   }
 }
 
-.searchButton {
-  position: absolute;
-  right: 0;
-  background-color: transparent;
-  border: none;
-  width: rem(30);
-  height: rem(30);
-  padding: rem(20);
-
-  &:hover svg {
-    transform: scale(1.1);
-    & path {
-      stroke: #646cff; // меняем цвет при наведении
-    }
-  }
-
-
-  svg {
+.cancelSearchButton {
     position: absolute;
-    top: 50%;
-    translate: -50% -50%;
-    width: rem(26); // размер иконки внутри кнопки
-    height: rem(26);
-    transition: all 0.15s ease;
+    right: 0;
+    width: rem(20);
+    height: rem(20);
+    padding: rem(20);
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: rem(20);
+      height: rem(2);
+      background-color: #979797;
+      transition: all 0.2s;
 
-    path {
-      transition: stroke 0.15s ease;
     }
-  }
 
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @include hover {
+      &::before,
+      &::after {
+        background-color: #000;
+      }
+    }
 }

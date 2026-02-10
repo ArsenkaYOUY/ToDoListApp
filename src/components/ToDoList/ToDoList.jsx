@@ -46,6 +46,11 @@ export default function ToDoList() {
         setIsSearching(true);
     }
 
+    function onCancelSearch() {
+        setIsSearching(false);
+        setSearchTasks([]);
+    }
+
     function getTasksToDisplay() {
         return isSearching ? searchTasks : tasks;
     }
@@ -101,7 +106,7 @@ export default function ToDoList() {
                 <div className={styles.toDoList}>
                     <Header  />
                     <AddTaskForm onAddTask={onAddTask} />
-                    <SearchTaskForm onSearchTask={onSearchTask} />
+                    <SearchTaskForm onSearchTask={onSearchTask} onCancelSearch={onCancelSearch} />
                     <ToDoListContext.Provider value={
                         {
                             setTasks,

@@ -1,4 +1,4 @@
-@use "../../../../../styles/helpers" as *;
+@use "@helpers" as *;
 
 .taskInput {
   width: 100%;
@@ -48,7 +48,7 @@
     left: 50%;
     width: rem(20);
     height: rem(2);
-    background-color: #000;
+    background-color: #979797;
     transition: all 0.2s;
 
   }
@@ -64,7 +64,7 @@
   @include hover {
     &::before,
     &::after {
-      background-color: #646cff;
+      background-color: #000;
     }
   }
 }
